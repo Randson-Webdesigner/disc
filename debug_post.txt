@@ -1,0 +1,14 @@
+Array
+(
+    [share-name] => Randson Farias
+    [share-email] => suporte.randson@gmail.com
+    [share-copy] => contato@randson.com.br
+    [percentD] => 20.0
+    [percentI] => 35.0
+    [percentS] => 20.0
+    [percentC] => 25.0
+    [perfil] => INFLUÊNCIA
+    [descricao] => Esta dimensão enfatiza a possibilidade de moldar o ambiente, influenciando e persuadindo as outras pessoas.
+    [fortes] => expressivo, cordial, amigável, comunicativo, entusiasta, compreensivo.
+    [fracos] => indisciplinado, egocêntrico, instável, improdutivo, exagerado.
+)
