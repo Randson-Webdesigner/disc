@@ -122,22 +122,22 @@ function showResults() {
     };
     const factorDescriptions = {
         D: {
-            desc: "Esta dimensão enfatiza a assertividade, foco em resultados e tomada de decisões rápidas.",
+            desc: "Esta dimensão reflete uma postura organizacional firmemente orientada para a ação. Ao valorizar a assertividade, a empresa estimula colaboradores a se posicionarem de forma clara e objetiva, reduzindo ambiguidades e agilizando fluxos de trabalho. O foco consistente em resultados garante que recursos sejam direcionados às iniciativas de maior impacto, promovendo ganhos de eficiência e retorno sobre investimento. Por fim, a ênfase na tomada de decisões rápidas confere à organização a agilidade necessária para responder a mudanças de mercado, antecipar oportunidades e mitigar riscos de forma proativa. Em conjunto, esses elementos criam um ambiente dinâmico que sustenta a competitividade e impulsiona o desempenho sustentável no longo prazo.",
             fortes: "determinado, direto, ousado, competitivo, objetivo, líder.",
             fracos: "impulsivo, impaciente, autoritário, insensível, intolerante."
         },
         I: {
-            desc: "Esta dimensão enfatiza a possibilidade de moldar o ambiente, influenciando e persuadindo as outras pessoas.",
+            desc: "Esta dimensão evidencia a capacidade de moldar o ambiente organizacional por meio de influência estratégica e poder de persuasão. Ao fortalecer habilidades interpessoais—como comunicação eficaz, empatia e negociação—ela capacita líderes e equipes a direcionarem comportamentos, alinhar interesses e gerar consenso em torno de metas comuns. Esse domínio de influência cria sinergia entre áreas, acelera a implementação de iniciativas e aumenta o compromisso dos colaboradores, resultando em um ecossistema mais coeso, adaptável e voltado ao desempenho.",
             fortes: "expressivo, cordial, amigável, comunicativo, entusiasta, compreensivo.",
             fracos: "indisciplinado, egocêntrico, instável, improdutivo, exagerado."
         },
         S: {
-            desc: "Esta dimensão enfatiza a cooperação, paciência e constância.",
+            desc: "Esta dimensão destaca a importância da cooperação, da paciência e da constância como pilares de um ambiente de trabalho sustentável. Ao priorizar a colaboração, a organização fomenta relações de confiança e troca de conhecimento entre equipes, reduzindo silos e ampliando a eficácia coletiva. A paciência, entendida como disposição para ouvir, compreender processos e respeitar ritmos individuais, contribui para decisões mais equilibradas e para um clima de respeito mútuo. Já a constância assegura que esforços e comportamentos positivos sejam mantidos ao longo do tempo, garantindo estabilidade operacional e previsibilidade nos resultados. Juntas, essas qualidades criam uma cultura que valoriza o crescimento consistente, a resiliência diante de desafios e o engajamento duradouro dos colaboradores.",
             fortes: "leal, paciente, prestativo, equilibrado, confiável, calmo.",
             fracos: "resistente a mudanças, indeciso, acomodado, lento, passivo."
         },
         C: {
-            desc: "Esta dimensão enfatiza a precisão, organização e atenção a detalhes.",
+            desc: "Esta dimensão ressalta a primazia da precisão, da organização e da atenção meticulosa aos detalhes, atributos essenciais para garantir excelência operacional e credibilidade institucional. Ao promover a precisão, a organização minimiza erros, otimiza recursos e sustenta padrões de qualidade elevados. A ênfase na organização estabelece processos estruturados e fluxos de trabalho claros, aumentando a eficiência e a rastreabilidade das atividades. Já a atenção cuidadosa aos detalhes permite identificar variáveis críticas, antecipar inconsistências e implementar melhorias contínuas, reforçando a confiabilidade das entregas. Em conjunto, esses elementos fortalecem a governança, elevam a satisfação de clientes e stakeholders e consolidam uma cultura orientada à excelência e à sustentabilidade de longo prazo.",
             fortes: "organizado, detalhista, analítico, metódico, disciplinado, cuidadoso.",
             fracos: "crítico, perfeccionista, rígido, frio, indeciso."
         }
