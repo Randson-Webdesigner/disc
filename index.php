@@ -6,6 +6,14 @@
     <title>Teste de Perfil Comportamental DISC</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    .title1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+    }
+</style>
 <body>
     <div class="container">
         <header>
@@ -15,7 +23,7 @@
 
         <div class="test-container">
             <div id="intro-section" class="section active">
-                <h2>Você está pronto(a) para conhecer seu perfil comportamental predominante?</h2>
+                <h2 class="title1">Você está pronto(a) para conhecer seu perfil comportamental predominante?</h2>
                 <div class="tips">
                     <h3>DICAS:</h3>
                     <ol>
