@@ -17,6 +17,14 @@ $perfil = $_POST['perfil'] ?? '';
 $descricao = $_POST['descricao'] ?? '';
 $fortes = $_POST['fortes'] ?? '';
 $fracos = $_POST['fracos'] ?? '';
+$top1_nome = $_POST['top1_nome'] ?? '';
+$top2_nome = $_POST['top2_nome'] ?? '';
+$top1_desc = $_POST['top1_desc'] ?? '';
+$top2_desc = $_POST['top2_desc'] ?? '';
+$top1_fortes = $_POST['top1_fortes'] ?? '';
+$top2_fortes = $_POST['top2_fortes'] ?? '';
+$top1_fracos = $_POST['top1_fracos'] ?? '';
+$top2_fracos = $_POST['top2_fracos'] ?? '';
 
 file_put_contents('debug_post.txt', print_r($_POST, true));
 
@@ -79,10 +87,15 @@ try {
             </div>
         </div>
         <div style="background:#fafafa;padding:16px;border-radius:8px;">
-            <h3 style="margin:0 0 8px 0;">Fator predominante: <span style="color:#1e88e5;">' . htmlspecialchars($perfil) . '</span></h3>
-            <p>' . $descricao . '</p>
-            <p><b>Pontos Fortes:</b> ' . $fortes . '</p>
-            <p><b>Pontos Fracos:</b> ' . $fracos . '</p>
+            <h3 style="margin:0 0 8px 0;">1º Fator predominante: <span style="color:#1e88e5;">' . htmlspecialchars($top1_nome) . '</span></h3>
+            <p>' . $top1_desc . '</p>
+            <p><b>Pontos Fortes:</b> ' . $top1_fortes . '</p>
+            <p><b>Pontos Fracos:</b> ' . $top1_fracos . '</p>
+            <hr>
+            <h3 style="margin:0 0 8px 0;">2º Fator mais presente: <span style="color:#e53935;">' . htmlspecialchars($top2_nome) . '</span></h3>
+            <p>' . $top2_desc . '</p>
+            <p><b>Pontos Fortes:</b> ' . $top2_fortes . '</p>
+            <p><b>Pontos Fracos:</b> ' . $top2_fracos . '</p>
         </div>
         <p style="margin-top:32px;font-size:13px;color:#888;">Radar do RH</p>
     </div>

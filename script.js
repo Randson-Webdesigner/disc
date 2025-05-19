@@ -108,7 +108,12 @@ function showResults() {
     document.getElementById('i-label').textContent = `${percentages.I.toFixed(1).replace('.', ',')}%`;
     document.getElementById('s-label').textContent = `${percentages.S.toFixed(1).replace('.', ',')}%`;
     document.getElementById('c-label').textContent = `${percentages.C.toFixed(1).replace('.', ',')}%`;
-    const dominantFactor = Object.entries(scores).reduce((a, b) => a[1] > b[1] ? a : b)[0];
+
+    // NOVO: Dois fatores mais votados
+    const sortedFactors = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    const top1 = sortedFactors[0][0];
+    const top2 = sortedFactors[1][0];
+
     const factorNames = {
         D: "DOMINÂNCIA",
         I: "INFLUÊNCIA",
@@ -137,12 +142,24 @@ function showResults() {
             fracos: "crítico, perfeccionista, rígido, frio, indeciso."
         }
     };
-    const domElem = document.getElementById('dominant-factor');
-    domElem.textContent = factorNames[dominantFactor];
-    domElem.className = 'dominant-highlight disc-' + dominantFactor.toLowerCase();
-    const desc = factorDescriptions[dominantFactor];
+
     document.getElementById('factor-description').innerHTML =
-        `<p>${desc.desc}</p><br><b>Pontos Fortes:</b> ${desc.fortes}<br><b>Pontos Fracos:</b> ${desc.fracos}`;
+        `<div style="margin-bottom:18px;">
+            <b>1º Fator predominante: <span style="color:#1e88e5;">${factorNames[top1]}</span></b><br>
+            <span>${factorDescriptions[top1].desc}</span><br>
+            <b>Pontos Fortes:</b> ${factorDescriptions[top1].fortes}<br>
+            <b>Pontos Fracos:</b> ${factorDescriptions[top1].fracos}
+        </div>
+        <div>
+            <b>2º Fator mais presente: <span style="color:#e53935;">${factorNames[top2]}</span></b><br>
+            <span>${factorDescriptions[top2].desc}</span><br>
+            <b>Pontos Fortes:</b> ${factorDescriptions[top2].fortes}<br>
+            <b>Pontos Fracos:</b> ${factorDescriptions[top2].fracos}
+        </div>`;
+
+    const domElem = document.getElementById('dominant-factor');
+    domElem.textContent = factorNames[top1];
+    domElem.className = 'dominant-highlight disc-' + top1.toLowerCase();
 
     // Adicionar botão para ir para o compartilhamento após o resultado
     if (!document.getElementById('go-share')) {
@@ -173,35 +190,17 @@ function showResults() {
             formData.append('percentS', sPercent);
             formData.append('percentC', cPercent);
 
-            const perfil = document.getElementById('dominant-factor').textContent;
-            formData.append('perfil', perfil);
-
-            // Pegue os textos de pontos fortes/fracos conforme o perfil predominante
-            const factorDescriptions = {
-                'DOMINÂNCIA': {
-                    desc: "Esta dimensão enfatiza a assertividade, foco em resultados e tomada de decisões rápidas.",
-                    fortes: "determinado, direto, ousado, competitivo, objetivo, líder.",
-                    fracos: "impulsivo, impaciente, autoritário, insensível, intolerante."
-                },
-                'INFLUÊNCIA': {
-                    desc: "Esta dimensão enfatiza a possibilidade de moldar o ambiente, influenciando e persuadindo as outras pessoas.",
-                    fortes: "expressivo, cordial, amigável, comunicativo, entusiasta, compreensivo.",
-                    fracos: "indisciplinado, egocêntrico, instável, improdutivo, exagerado."
-                },
-                'ESTABILIDADE': {
-                    desc: "Esta dimensão enfatiza a cooperação, paciência e constância.",
-                    fortes: "leal, paciente, prestativo, equilibrado, confiável, calmo.",
-                    fracos: "resistente a mudanças, indeciso, acomodado, lento, passivo."
-                },
-                'CONFORMIDADE': {
-                    desc: "Esta dimensão enfatiza a precisão, organização e atenção a detalhes.",
-                    fortes: "organizado, detalhista, analítico, metódico, disciplinado, cuidadoso.",
-                    fracos: "crítico, perfeccionista, rígido, frio, indeciso."
-                }
-            };
-            formData.append('descricao', factorDescriptions[perfil].desc);
-            formData.append('fortes', factorDescriptions[perfil].fortes);
-            formData.append('fracos', factorDescriptions[perfil].fracos);
+            // Enviar os dois fatores mais votados
+            formData.append('top1', top1);
+            formData.append('top2', top2);
+            formData.append('top1_nome', factorNames[top1]);
+            formData.append('top2_nome', factorNames[top2]);
+            formData.append('top1_desc', factorDescriptions[top1].desc);
+            formData.append('top2_desc', factorDescriptions[top2].desc);
+            formData.append('top1_fortes', factorDescriptions[top1].fortes);
+            formData.append('top2_fortes', factorDescriptions[top2].fortes);
+            formData.append('top1_fracos', factorDescriptions[top1].fracos);
+            formData.append('top2_fracos', factorDescriptions[top2].fracos);
 
             fetch('send_report.php', {
                 method: 'POST',
@@ -210,12 +209,20 @@ function showResults() {
             .then(response => response.text())
             .then(result => {
                 if (result.trim() === 'success' || result.trim() === 'Enviado!') {
-                    shareForm.style.display = 'none';
+                    document.querySelector('.share-content').style.display = 'none';
                     shareSuccess.style.display = 'block';
                 } else {
                     alert('Erro ao enviar: ' + result);
                 }
             });
+        });
+    }
+
+    // Botão para voltar ao início
+    const backToStartBtn = document.getElementById('back-to-start');
+    if (backToStartBtn) {
+        backToStartBtn.addEventListener('click', function() {
+            location.reload();
         });
     }
 } 

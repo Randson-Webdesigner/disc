@@ -284,12 +284,26 @@ h1 {
 }
 .share-success {
     margin-top: 2rem;
-    background: #f8fff4;
+    background: #e8fff0;
     border: 1px solid #b2dfdb;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     text-align: center;
     color: #388e3c;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.share-success h2 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+.share-success h3 {
+    color: #388e3c;
+    margin-bottom: 1rem;
+}
+.share-success p {
+    color: #222;
+    font-size: 1.1rem;
 }
 @media (max-width: 900px) {
     .share-flex {

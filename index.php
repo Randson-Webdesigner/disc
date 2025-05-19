@@ -86,32 +86,37 @@
             </div>
 
             <div id="share-section" class="section">
-                <h2>Receba seu relatório:</h2>
-                <div class="share-flex">
-                    <div class="share-info">
-                        <p>Insira seu nome e seu melhor e-mail nos campos ao lado para <b>receber gratuitamente</b> o resultado do seu teste de perfil comportamental.</p>
-                        <p>Você também pode enviar uma cópia do seu relatório para outra pessoa, como uma empresa que tenha lhe solicitado o teste ou para seu coach, por exemplo.</p>
-                        <p>Para isso, basta preencher (no campo especificado) também o e-mail de quem deseja que receba a cópia do seu relatório DISC.</p>
-                        <a href="index.php"
-                        style="display:inline-block;padding:10px 18px;border-radius:6px;
-                                background:#007BFF;color:#fff;font-family:sans-serif;
-                                font-size:16px;text-decoration:none;cursor:pointer;">
-                        Voltar ao início
-                        </a>
+                <div class="share-content">
+                    <h2>Receba seu relatório:</h2>
+                    <div class="share-flex">
+                        <div class="share-info">
+                            <p>Insira seu nome e seu melhor e-mail nos campos ao lado para <b>receber gratuitamente</b> o resultado do seu teste de perfil comportamental.</p>
+                            <p>Você também pode enviar uma cópia do seu relatório para outra pessoa, como uma empresa que tenha lhe solicitado o teste ou para seu coach, por exemplo.</p>
+                            <p>Para isso, basta preencher (no campo especificado) também o e-mail de quem deseja que receba a cópia do seu relatório DISC.</p>
+                            <a href="index.php"
+                            style="display:inline-block;padding:10px 18px;border-radius:6px;
+                                    background:#007BFF;color:#fff;font-family:sans-serif;
+                                    font-size:16px;text-decoration:none;cursor:pointer;">
+                            Voltar ao início
+                            </a>
+                        </div>
+                        <form class="share-form" id="share-form">
+                            <label for="share-name">Seu nome*</label>
+                            <input type="text" id="share-name" name="share-name" required>
+                            <label for="share-email">Seu melhor email*</label>
+                            <input type="email" id="share-email" name="share-email" required>
+                            <label for="share-copy">Enviar cópia do relatório para:</label>
+                            <input type="email" id="share-copy" name="share-copy" placeholder="Opcional">
+                            <button type="submit" class="btn-primary">ENVIAR MEU RELATÓRIO AGORA&gt;&gt;</button>
+                        </form>
                     </div>
-                    <form class="share-form" id="share-form">
-                        <label for="share-name">Seu nome*</label>
-                        <input type="text" id="share-name" name="share-name" required>
-                        <label for="share-email">Seu melhor email*</label>
-                        <input type="email" id="share-email" name="share-email" required>
-                        <label for="share-copy">Enviar cópia do relatório para:</label>
-                        <input type="email" id="share-copy" name="share-copy" placeholder="Opcional">
-                        <button type="submit" class="btn-primary">ENVIAR MEU RELATÓRIO AGORA&gt;&gt;</button>
-                    </form>
                 </div>
                 <div id="share-success" class="share-success" style="display:none;">
+                    <h2>🎉 Parabéns!</h2>
                     <h3>Relatório enviado com sucesso!</h3>
-                    <p>Verifique sua caixa de entrada (ou spam) para receber o resultado.</p>
+                    <p>Obrigado por realizar o Teste de Perfil Comportamental DISC.</p>
+                    <p>Verifique sua caixa de entrada (ou spam) para receber o resultado do seu teste.</p>
+                    <button id="back-to-start" class="btn-primary">Voltar ao início</button>
                 </div>
             </div>
         </div>
